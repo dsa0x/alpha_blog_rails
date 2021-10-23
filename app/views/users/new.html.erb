@@ -1,19 +1,2 @@
-<h1 align="center" >Signup for Alpha blog</h1>
-<%= form_for(@user, :html => {class: "m-5 mx-auto w-50 form-horizontal",role: "form"}) do |f| %>
-  <div class="mb-3">
-    <div class="form-label"><%= f.label :username %><br/>
-    </div>
-    <%= f.text_field :username, class: "form-control", placeholder: "Enter username" %>
-  </div>
-  <div class="mb-3">
-    <div class="form-label"><%= f.label :email %><br/>
-    </div>
-    <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
-  </div>
-  <div class="mb-3">
-    <div class="form-label"><%= f.label :password %><br/>
-    </div>
-    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
-  </div>
-  <%= f.submit "Sign up", class: "btn btn-primary" %>
-<% end %>
+<h1 align="center" >Sign up for Alpha blog</h1>
+<%= render 'form' %>

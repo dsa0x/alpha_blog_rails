@@ -10,7 +10,7 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false},
     length: {minimum:10, maximum:105},
     format: {with: VALID_EMAIL_REGEX}
-
+    has_secure_password
     def new
         
     end

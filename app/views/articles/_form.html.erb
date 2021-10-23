@@ -6,18 +6,16 @@
     <% end %>
   </ul>
 <% end %>
-<form>
-  <%= form_for @article do |f| %>
-    <div class="mb-3">
-      <div class="form-label"><%= f.label :title %><br/>
-      </div>
-      <%= f.text_field :title, class: "form-control", placeholder: "Title of article" %>
+<%= form_for @article do |f| %>
+  <div class="mb-3">
+    <div class="form-label"><%= f.label :title %><br/>
     </div>
-    <div class="mb-3">
-      <div class="form-label"><%= f.label :description %><br/>
-      </div>
-      <%= f.text_area :description, class: "form-control" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Title of article" %>
+  </div>
+  <div class="mb-3">
+    <div class="form-label"><%= f.label :description %><br/>
     </div>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
-</form>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

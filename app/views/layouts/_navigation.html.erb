@@ -13,11 +13,42 @@
           <%= link_to 'Articles', articles_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'New Article', new_article_path, class: "nav-link" %>
+          <%= link_to 'Users', users_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Actions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to 'New Article', new_article_path %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to 'View profile', user_path(current_user) %></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log in', login_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign up', signup_path, class: "nav-link" %>
+          </li>
+        <% end %>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Your Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to 'Edit profile', edit_user_path(current_user) %> (<%= current_user.id %>)</li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to 'View profile', user_path(current_user) %></li>
+            </ul>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

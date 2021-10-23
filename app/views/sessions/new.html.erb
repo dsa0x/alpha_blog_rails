@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<%= form_for(:session, :html => {class: "m-5 mx-auto w-50 form-horizontal",role: "form"}, url: login_path) do |f| %>
+  <div class="mb-3">
+    <div class="form-label"><%= f.label :email %><br/>
+    </div>
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
+  </div>
+  <div class="mb-3">
+    <div class="form-label"><%= f.label :password %><br/>
+    </div>
+    <%= f.password_field :password, class: "form-control", autocomplete: 'off' %>
+  </div>
+  <%= f.submit "Sign in", class: "btn btn-primary btn-lg" %>
+<% end %>

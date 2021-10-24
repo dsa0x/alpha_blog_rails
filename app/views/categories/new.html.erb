@@ -1,0 +1,9 @@
+<h1>Create new category</h1>
+<%= form_for(@category, :html => {class: "m-5 mx-auto w-50 form-horizontal",role: "form"}) do |f| %>
+  <div class="mb-3">
+    <div class="form-label"><%= f.label :name %><br/>
+    </div>
+    <%= f.text_field :name, class: "form-control", placeholder: "Enter name" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
